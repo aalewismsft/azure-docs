@@ -62,6 +62,10 @@ This article provides detailed descriptions and requirements for components of A
 - When delegation occurs, provisioning of Application Gateway for Containers resources doesn't happen, nor is there an exclusive mapping to an Application Gateway for Containers association resource.
 - Any number of subnets can have a subnet delegation that is the same or different to Application Gateway for Containers.  Once defined, no other resources, other than the defined service, can be provisioned into the subnet unless explicitly defined by the service's implementation.
 
+### Network routing
+
+- The Application Gateway for Containers delegated subnet needs to be able to communicate with the AKS Cluster over the network. If the Application Gateway for Containers delegated subnet is in a different VNet, then set up VNet peering between this VNet and the VNet of the AKS cluster to enable network communication.
+
 ### User-assigned managed identity
 
 - Managed identities for Azure resources eliminate the need to manage credentials in code.
